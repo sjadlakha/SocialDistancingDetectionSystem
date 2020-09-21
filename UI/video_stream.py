@@ -43,9 +43,10 @@ class App:
         self.canvas.pack()
 
         # Stop Button
-        style = tkinter.ttk.Style()
-        self.btn_stop = tkinter.Button(window, text="STOP DETECTION AND EXIT", width=50, command=self.end)
-        self.btn_stop.pack(anchor=tkinter.CENTER, expand=True)
+        # style = tkinter.ttk.Style()
+        self.btn_stop = tkinter.Button(window, text="STOP DETECTION AND EXIT", width=50,
+                                       command=self.end, pady=10, fg='white', highlightbackground='brown', font='Helvetica 20 bold')
+        self.btn_stop.pack(pady=10, anchor=tkinter.CENTER, expand=True)
 
         # After calling once, it will be called automatically after given delay in ms
         self.delay = 15

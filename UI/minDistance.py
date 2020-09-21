@@ -5,9 +5,11 @@ import tkinter as tk
 class minDist:
     def __init__(self):
         self.root = tk.Tk()
+        self.root.title('Set Minimum Distance')
         # setting the window to max size of the window
         w, h = self.root.winfo_screenwidth(), self.root.winfo_screenheight()
         self.root.geometry("%dx%d+0+0" % (w, h))
+        # Can be set as per the government norms
         self.val = 2
 
     def start(self):
@@ -60,4 +62,4 @@ class minDist:
 
         self.root.mainloop()
 
-# minDist().start()
+minDist().start()

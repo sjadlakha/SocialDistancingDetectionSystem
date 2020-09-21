@@ -1,9 +1,9 @@
 import tkinter as tk
 
-
 class main:
     def __init__(self):
         self.root = tk.Tk()
+        self.root.title('Social Distancing Alarm System')
         # setting the window to max size of the window
         w, h = self.root.winfo_screenwidth(), self.root.winfo_screenheight()
         self.root.geometry("%dx%d+0+0" % (w, h))
@@ -34,8 +34,5 @@ class main:
                     ).pack()
 
             self.root.mainloop()
-
-        # def initialise(self):
-
 
 main().start()
