@@ -43,7 +43,8 @@ class App:
         self.canvas.pack()
 
         # Stop Button
-        self.btn_stop = tkinter.Button(window, text="STOP DETECTION", width=50, command=self.end)
+        style = tkinter.ttk.Style()
+        self.btn_stop = tkinter.Button(window, text="STOP DETECTION AND EXIT", width=50, command=self.end)
         self.btn_stop.pack(anchor=tkinter.CENTER, expand=True)
 
         # After calling once, it will be called automatically after given delay in ms
@@ -62,10 +63,9 @@ class App:
         self.window.after(self.delay, self.update)
 
     def end(self):
-        if self.vid.isOpened():
-            self.vid.release()
+        self.vid.vid.release()
+        self.window.destroy()
         cv2.destroyAllWindows()
 
 
-# Displaying an Empty screen for testing
 App(tkinter.Tk(), "Video Stream")
