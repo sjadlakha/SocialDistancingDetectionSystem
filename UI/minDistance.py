@@ -35,7 +35,7 @@ class minDist:
         def validateEntry():
             x = v.get()
             if x.isdigit() and len(x) <= 2:
-                if int(x) > self.val:
+                if int(x) > self.val and int(x)<=15:
                     p_button["state"] = "normal"
                 else:
                     p_button["state"] = "disabled"

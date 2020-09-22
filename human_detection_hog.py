@@ -14,11 +14,11 @@ def detect(frame):
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
         person += 1
     
-    cv2.putText(frame, 'Status : Detecting ', (40, 40),
-                cv2.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 0), 2)
-    cv2.putText(frame, f'Total Persons : {person-1}',
-                (40, 70), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 0, 0), 2)
-    cv2.imshow('output', frame)
+    # cv2.putText(frame, 'Status : Detecting ', (40, 40),
+    #             cv2.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 0), 2)
+    # cv2.putText(frame, f'Total Persons : {person-1}',
+    #             (40, 70), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 0, 0), 2)
+    # cv2.imshow('output', frame)
 
     return frame
 
