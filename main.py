@@ -60,13 +60,13 @@ class DistancePage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-
+        self.val = 1
         tk.Label(self,
                  text="SOCIAL DISTANCING DETECTION AND ALARM SYSTEM",
                  fg="green",
                  pady=100,
                  font="Helvetica 50 bold ").pack()
-        tk.Label(self.root,
+        tk.Label(self,
                  text="""Enter The Minimum Distance""",
                  fg="blue",
                  font="Helvetica 20",
@@ -81,9 +81,11 @@ class DistancePage(tk.Frame):
 
         def validateEntry():
             x = v.get()
+            
             if x.isdigit() and len(x) <= 2:
                 if int(x) > self.val and int(x) <= 15:
                     p_button["state"] = "normal"
+                    INPUT_DISTANCE = int(x)
                 else:
                     p_button["state"] = "disabled"
             else:
@@ -95,7 +97,7 @@ class DistancePage(tk.Frame):
                                  pady=10,
                                  padx=10,
                                  font='Helvetica 20',
-                                 command=validateEntry)
+                                 command= validateEntry)
         check_button.pack(pady=10)
 
         p_button = tk.Button(self,
@@ -104,8 +106,8 @@ class DistancePage(tk.Frame):
                              pady=10,
                              padx=10,
                              state="disabled",
-                             font='Helvetica 30'
-                            #  command=humanDetection(v.get()*100)
+                             font='Helvetica 30',
+                             command= lambda : humanDetection(int(v.get())*100)
                              )
         p_button.pack(pady=20)
 
