@@ -4,6 +4,8 @@ import imutils
 import numpy as np
 
 def detect(frame):
+    HOGCV = cv2.HOGDescriptor()
+    HOGCV.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
     bounding_box_cordinates, weights = HOGCV.detectMultiScale(
         frame, winStride=(4, 4), padding=(8, 8), scale=1.03)
     
@@ -40,8 +42,7 @@ def humanDetector():
 
 
 if __name__ == "__main__":
-    HOGCV = cv2.HOGDescriptor()
-    HOGCV.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+    
 
     humanDetector()
 
